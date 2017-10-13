@@ -1,0 +1,79 @@
+# include<stdio.h>
+# include<conio.h>
+# include<stdlib.h>
+# include<ctype.h>
+ 
+int a[15], b[15], n=15;
+int i, j, k, aux;
+int opcion, marca=0;
+ 
+void leer(void);
+void baraja(void);
+void visualizaro(void);
+void visualizarn(void);
+ 
+void main(){
+textcolor(14);
+textbackground(1);
+clrscr();
+ 
+do
+{
+clrscr();
+printf("******************************* METODO DE LA BARAJA ****************************\n\n\n\n\n\n");
+printf("                      [1]  LEER DATOS\n");
+printf("                      [2]  VISUALIZAR EL ARREGLO ORIGINAL\n");
+printf("                      [3]  VISUALIZAR EL ARREGLO ORDENADO\n");
+printf("                      [4]  ORDENAR EL ARREGLO\n");
+printf("                      [5]  SALIR DEL PROGRAMA\n\n\n");
+printf("                     SELECCIONE LA OPCION DESEADA.....");
+scanf("%d",&opcion);
+ 
+ switch(opcion){
+ 
+ case 1:   leer();
+	   break;
+ 
+ case 2:   if(marca==0){
+	    clrscr();
+	    gotoxy(32, 12); printf("­NO HAY ELEMENTOS! \n");
+	    getch();
+	   }
+	   else
+	   visualizaro();
+	   break;
+ 
+ case 3:   if(marca==1){
+	    visualizarn();
+	    break;
+	   }
+	   else
+	   clrscr();
+	   gotoxy(32, 12); printf("­ARREGLO NO ORDENADO! ");
+	   getch();
+	   break;
+ 
+ case 4:   if(marca==0){
+	    clrscr();
+	    gotoxy(32, 12); printf("­NO HAY ELEMENTOS! \n");
+	    getch();
+	    break;
+	   }
+	   else
+	   baraja();
+	   clrscr();
+	   gotoxy(32, 12); printf("­ORDENADO! ");
+	   getch();
+	   break;
+ 
+ case 5:   clrscr();
+	   gotoxy(32, 12); printf("SALIDA..........");
+	   getch();
+	   exit(1);
+ 
+}
+}
+while(opcion!=5);
+}
+ 
+ 
